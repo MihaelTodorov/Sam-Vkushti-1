@@ -45,6 +45,30 @@
                         int odds = nums.Count(x => x % 2 != 0);
                         Console.WriteLine($"CountOdds={odds}");
                         break;
+                    case "del":
+                        int toDelete = int.Parse(cmd[1]);
+                        nums.Remove(toDelete);
+                        break;
+
+                    case "remove":
+                        int removeIndex = int.Parse(cmd[1]);
+                        if (removeIndex >= 0 && removeIndex < nums.Count)
+                            nums.RemoveAt(removeIndex);
+                        break;
+                    case "add":
+                        int a = int.Parse(cmd[1]);
+                        int b = int.Parse(cmd[2]);
+                        nums.Add(a + b);
+                        break;
+                    case "countl":
+                        int limit = int.Parse(cmd[1]);
+                        int greaterCount = nums.Count(x => x > limit);
+                        Console.WriteLine($"CountL={greaterCount}");
+                        break;
+                    case "countodds":
+                        int odds = nums.Count(x => x % 2 != 0);
+                        Console.WriteLine($"CountOdds={odds}");
+                        break;
                 }
             }
         }
